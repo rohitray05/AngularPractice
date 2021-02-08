@@ -1,0 +1,32 @@
+ <h3>Basic Components for Basic Operations</h3>
+<h4>String Iterpolation Or Data Binding</h4>
+<p><strong>{{dataBind}}</strong></p>
+<br>
+<hr>
+<h4>Property Binding</h4>
+<!-- [disabled]="something" this way something can have true or false as a dynamic value
+This is how attributes are binded with a property using property binding
+Similarly:
+<div [innerText]="allowNewUser"></div> -->
+<button class="btn btn-primary" [disabled]="!allowNewUser">Propert Binding</button>
+<p><strong>Button Enable: </strong>{{allowNewUser}}</p>
+<br>
+<hr>
+<h4>Event Binding</h4>
+<button class="btn btn-primary" [disabled]="!allowNewUser" (click)="changeUserCreatedStatus()">Event Binding</button>
+<div>{{userCreatedStatus}}</div>
+<br>
+<h4>Send Data using Event Binding</h4>
+<div>
+    <label for="input-data">User Name</label>
+    <input type="text" id="input-data" class="form-control" (input)="onUpdateUser($event)"/>
+</div>
+<div><strong>Typed Data: </strong>{{userName}}</div>
+<br>
+<h4>Two way Binding</h4>
+<p>Change at one place will be reflected Everywhere </p>
+<div>
+    <label for="input-data1">User Name</label>
+    <input type="text" id="input-data1" class="form-control" [(ngModel)]="userNameTwoWay"/>
+</div>
+<div><strong>Typed Data: </strong>{{userNameTwoWay}}</div>
