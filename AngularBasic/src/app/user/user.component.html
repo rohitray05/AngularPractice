@@ -30,3 +30,26 @@ Similarly:
     <input type="text" id="input-data1" class="form-control" [(ngModel)]="userNameTwoWay"/>
 </div>
 <div><strong>Typed Data: </strong>{{userNameTwoWay}}</div>
+<br>
+<hr>
+<h4>NgIf Structural Directives| Structural Directives have * marks</h4>
+<div>
+    <label for="input-data1">User Name</label>
+    <input type="text" id="input-data2" class="form-control" [(ngModel)]="userNameTwoWay"/>
+</div>
+<button class="btn btn-primary my-2" (click)="changeUserCreatedStatus()">Click to Add</button>
+<div *ngIf="isUserCreated;else noUser">UserName {{userNameTwoWay}} got created</div>
+<ng-template #noUser>
+    <div>UserName not created</div> 
+</ng-template>
+<br>
+<hr>
+<h4>NgStyle Directives</h4>
+<!-- <div [ngStyle]="{'background-color':'red'}">UserName {{userNameTwoWay} will have dynamic NgStyle</div> -->
+<div [ngStyle]="{'background-color':getColor()}">UserName {{userNameTwoWay} will have dynamic NgStyle</div>
+<br>
+<hr>
+<h4>NgFor Directive</h4>
+<div *ngFor="let user of users">
+    <p>{{user}}</p>
+</div>

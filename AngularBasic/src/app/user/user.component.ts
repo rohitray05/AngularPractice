@@ -15,6 +15,8 @@ export class UserComponent implements OnInit{
   userCreatedStatus:string='No User is Created';
   userName:string='';
   userNameTwoWay:string='';
+  isUserCreated:boolean=false;
+  users:Array<string>=['user1','user2','user3','user4'];
   constructor(){
    setTimeout(() => {
      this.allowNewUser=true
@@ -25,11 +27,17 @@ export class UserComponent implements OnInit{
   }
   
   changeUserCreatedStatus(){
+  this.isUserCreated=true;
   this.userCreatedStatus='User is Created';
+
   }
 
   onUpdateUser(input:Event){
    //console.log(input)
    this.userName = (input.target as HTMLInputElement).value;
+  }
+
+  getColor(){
+    return 'green';
   }
 }

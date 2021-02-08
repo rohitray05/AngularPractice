@@ -30,3 +30,17 @@
    this.userName = (<HTMLInputElement>input.target).value; -> Type Casting
    Ts doesn't know if input event is an HTMLInputElement thus we typecast
   }
+
+7. Else condition is written in <ng-template #elseCondition></ng-template> with #local reference
+   *ngIf="condition; else tempRef"
+    
+
+8. [ngStyle]="{'style-property':'value'}"
+   <div [ngStyle]="{'background-color':getColor()}">UserName {{userNameTwoWay} will have dynamic NgStyle</div>
+
+9. [ngClass]="{'className':true or false}" if its true it will apply the class
+
+10. *ngFor="let data from users;"
+
+11. Debug: webpack-> in .folder we can find the files
+    In angular we have an chrome extension for debugging angular application Augury
